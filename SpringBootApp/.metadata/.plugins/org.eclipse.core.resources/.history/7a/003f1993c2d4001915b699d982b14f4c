@@ -1,0 +1,13 @@
+package com.HystrixBookStore;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HystrixTestBookstoreServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HystrixTestBookstoreServiceApplication.class, args);
+	}
+
+}

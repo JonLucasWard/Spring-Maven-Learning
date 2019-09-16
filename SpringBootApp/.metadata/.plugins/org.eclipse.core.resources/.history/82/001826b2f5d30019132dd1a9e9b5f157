@@ -1,0 +1,17 @@
+package com.FeignClientTest;
+
+@RestController
+public class Controller {
+
+	final RestClient restClient;
+	
+	@Autowired
+	public HomeController(RestClient restClient) {
+		this.restClient = restClient;
+	}
+	
+	@GetMapping("/game")
+	public String play() {
+		return restClient.play();
+	}
+}

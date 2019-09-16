@@ -1,0 +1,13 @@
+package tests;
+
+import hello.*;
+
+
+public class Test {
+
+	@Test
+	public void test() {
+		
+	}
+	
+}

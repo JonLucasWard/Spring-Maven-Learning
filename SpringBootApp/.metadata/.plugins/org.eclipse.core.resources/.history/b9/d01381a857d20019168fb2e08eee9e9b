@@ -1,0 +1,10 @@
+#the port eureka runs on, it has a fancy little gui
+server.port=8761
+
+#Tell eureka to not friggin register itself
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+
+#Turning off some logging for sanity's sake, it will otherwise complain that there aren't more eurekas
+logging.level.com.netflix.eureka=OFF
+logging.level.com.netflix.discovery=OFF

@@ -1,0 +1,14 @@
+package com.FeignClientTest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RestController
+public class Controller {
+	@Autowired
+	FeignInterface feignInterface;
+	
+	@GetMapping("/game")
+	public String play() {
+		return feignInterface.play();
+	}
+}

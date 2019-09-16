@@ -1,0 +1,10 @@
+package com.FeignClientTest;
+
+
+
+@FeignClient(name = "game")
+public interface FeignInterface {
+
+	@RequestMapping(value = "/game")
+	public String play();
+}

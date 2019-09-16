@@ -1,0 +1,21 @@
+package com.FeignClientTest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+
+	final RestClient restClient;
+	
+	@Autowired
+	public HomeController(RestClient restClient) {
+		this.restClient = restClient;
+	}
+	
+	@GetMapping("/game")
+	public String play() {
+		return restClient.play();
+	}
+}

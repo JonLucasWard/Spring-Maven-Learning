@@ -1,0 +1,12 @@
+package com.FeignClientTest;
+
+@RestController
+public class Controller {
+	@Autowired
+	FeignInterface feignInterface;
+	
+	@GetMapping("/game")
+	public String play() {
+		return feignInterface.play();
+	}
+}

@@ -1,0 +1,24 @@
+#the port eureka runs on, it has a fancy little gui
+server.port=8761
+
+#Tell eureka to not friggin register itself
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+
+#Turning off some logging for sanity's sake, it will otherwise complain that there aren't more eurekas
+logging.level.com.netflix.eureka=OFF
+logging.level.com.netflix.discovery=OFF
+
+##You can also do the following to set Eureka's port
+#eureka:
+	#client:
+		#serviceUrl:
+			#defaultZone: http://localhost:8761/eureka
+			
+##${environmentVariableName} is also a thing
+
+##The following will let you see the health and status of things on the apps
+#eureka:
+  #instance:
+    #statusPageUrlPath: ${server.servletPath}/info
+    #healthCheckUrlPath: ${server.servletPath}/health

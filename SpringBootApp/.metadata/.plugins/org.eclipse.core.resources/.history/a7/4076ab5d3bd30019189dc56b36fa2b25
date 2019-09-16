@@ -1,0 +1,9 @@
+package com.FeignClientTest;
+
+public class Book {
+	private String isbn;
+	private String author;
+	private String title;
+	private String synopsis;
+	private String language;
+}

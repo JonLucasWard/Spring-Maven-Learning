@@ -1,0 +1,29 @@
+package com.RabbitMQTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+//the following class will send a message to the rabbit exchange (outside server)
+@Component
+public class Runner implements CommandLineRunner {
+
+	private final RabbitTemplate rabbitTemplate; //make a rabbit template, provides many defaults
+	private final Receiver receiver; //get the receiver we made in the main app class
+	
+	public Runner(Receiver receiver, RabbitTemplate rabbitTemplate) { //create runner object
+		this.receiver = receiver;
+		this.rabbitTemplate = rabbitTemplate;
+	}
+	
+	@Override
+	public void run (String... args) throws Exception {
+		System.out.println("Sending message...");
+		//convert objects to strings, send it to the server exchange, give it a routing key, and an object to send out
+		rabbitTemplate.convertAndSend(RabbitMqTestApplication.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!");
+		receiver.getLatch().await(10000, TimeUnit.MILLISECONDS); //make receiver receive the message within 10 seconds
+			//normally receiver would just be in a loop always checking for messages
+	}
+}

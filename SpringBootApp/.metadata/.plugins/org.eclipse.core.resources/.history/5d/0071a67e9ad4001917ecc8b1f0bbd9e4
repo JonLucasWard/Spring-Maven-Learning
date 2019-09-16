@@ -1,0 +1,14 @@
+server:
+	port: 8083
+	
+spring:
+	application:
+		name: 'FeignClient'
+
+ribbon:
+	eureka:
+		enabled: false
+		
+users:
+  ribbon:
+    listOfServers: http://localhost:8081
