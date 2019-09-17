@@ -12,8 +12,9 @@
 <fullyQualifiedTypeName name="org.springframework.security.provisioning.InMemoryUserDetailsManager"/>
 <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.SpringBootApplication"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
-<fullyQualifiedTypeName name="org.springframework.cloud.openfeign.EnableFeignClients"/>
 <fullyQualifiedTypeName name="com.netflix.niws.client.http.RestClient"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 <fullyQualifiedTypeName name="com.example.demo.Application"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.openfeign.EnableFeignClients"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.openfeign.FeignClient"/>
 </qualifiedTypeNameHistroy>
